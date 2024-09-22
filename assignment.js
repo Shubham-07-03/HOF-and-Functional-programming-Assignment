@@ -4,24 +4,24 @@ order. You're given an array of items, each with a price property. Use the forEa
 the array and sum up the prices to get the total order amount.
 */
 
-// function calculateTotalPrice(items) {
-//     let totalPrice = 0;
+function calculateTotalPrice(items) {
+    let totalPrice = 0;
     
-//     items.forEach(item => {
-//         totalPrice += item.price;
-//     });
+    items.forEach(item => {
+        totalPrice += item.price;
+    });
     
-//     return totalPrice;
-// }
-// const orderItems = [
-//     { name: 'Laptop', price: 120000 },
-//     { name: 'Mobile', price: 70000 },
-//     { name: 'Mobile Charger', price: 1500 },
-//     { name: 'Laptop Charger', price: 10500 },
-// ];
+    return totalPrice;
+}
+const orderItems = [
+    { name: 'Laptop', price: 120000 },
+    { name: 'Mobile', price: 70000 },
+    { name: 'Mobile Charger', price: 1500 },
+    { name: 'Laptop Charger', price: 10500 },
+];
 
-// const total = calculateTotalPrice(orderItems);
-// console.log(`The total price is Rs. ${total.toFixed(2)}`);
+const total = calculateTotalPrice(orderItems);
+console.log(`The total price is Rs. ${total.toFixed(2)}`);
 // // Output: The total price is Rs. 202000.00
 
 
@@ -38,15 +38,15 @@ console every 2 seconds. The program should keep printing new random numbers ind
 second delay between each number.
 */
 
-// function printRandomNumbers() {
-//     setInterval(() => {
-//         const randomNumber = Math.random(); // Generates a random number between 0 and 1
-//         console.log(randomNumber);
-//     }, 2000); // 2000 milliseconds = 2 seconds
-// }
+function printRandomNumbers() {
+    setInterval(() => {
+        const randomNumber = Math.random(); // Generates a random number between 0 and 1
+        console.log(randomNumber);
+    }, 2000); // 2000 milliseconds = 2 seconds
+}
 
-// // Start the function
-// printRandomNumbers();
+// Start the function
+printRandomNumbers();
 
 
 
@@ -61,25 +61,25 @@ amount and category. Use the map method to create a new array that includes the 
 expense. Assume a tax rate of 10%.
 */
 
-// function calculateTaxes(expenses) {
-//     const taxRate = 0.10; // 10% tax rate
+function calculateTaxes(expenses) {
+    const taxRate = 0.10; // 10% tax rate
 
-//     return expenses.map(expense => {
-//         const tax = expense.amount * taxRate;
-//         return {
-//             ...expense,
-//             tax: tax // Adding the calculated tax to each expense object
-//         };
-//     });
-// }
-// const expenses = [
-//     { amount: 100, category: 'Utilities' },
-//     { amount: 200, category: 'Groceries' },
-//     { amount: 50, category: 'Entertainment' }
-// ];
+    return expenses.map(expense => {
+        const tax = expense.amount * taxRate;
+        return {
+            ...expense,
+            tax: tax // Adding the calculated tax to each expense object
+        };
+    });
+}
+const expenses = [
+    { amount: 100, category: 'Utilities' },
+    { amount: 200, category: 'Groceries' },
+    { amount: 50, category: 'Entertainment' }
+];
 
-// const expensesWithTaxes = calculateTaxes(expenses);
-// console.log(expensesWithTaxes);
+const expensesWithTaxes = calculateTaxes(expenses);
+console.log(expensesWithTaxes);
 // output
 // [
 //     { amount: 100, category: 'Utilities', tax: 10 },
@@ -102,19 +102,19 @@ expense. Assume a tax rate of 10%.
 4. Using the same array of expense objects, use the filter method to create a new array that includes only
    the expenses related to the category "Groceries."
 */
-// function filterGroceries(expenses) {
-//     return expenses.filter(expense => expense.category === 'Groceries');
-// }
+function filterGroceries(expenses) {
+    return expenses.filter(expense => expense.category === 'Groceries');
+}
 
-// const monthlyExpenses = [
-//     { amount: 100, category: 'Groceries' },
-//     { amount: 200, category: 'Utilities' },
-//     { amount: 50, category: 'Transportation' },
-//     { amount: 75, category: 'Groceries' }
-// ];
+const monthlyExpenses = [
+    { amount: 100, category: 'Groceries' },
+    { amount: 200, category: 'Utilities' },
+    { amount: 50, category: 'Transportation' },
+    { amount: 75, category: 'Groceries' }
+];
 
-// const groceryExpenses = filterGroceries(monthlyExpenses);
-// console.log(groceryExpenses);
+const groceryExpenses = filterGroceries(monthlyExpenses);
+console.log(groceryExpenses);
 //output:
 // [
 //     { amount: 100, category: 'Groceries' },
@@ -135,19 +135,19 @@ expense. Assume a tax rate of 10%.
 5. Using the same array of expense objects, use the reduce method to calculate the total amount of all
 expenses.
 */
-// function calculateTotalExpenses(expenses) {
-//     return expenses.reduce((total, expense) => total + expense.amount, 0);
-// }
+function calculateTotalExpenses(expenses) {
+    return expenses.reduce((total, expense) => total + expense.amount, 0);
+}
 
-// const monthlyExpenses = [
-//     { amount: 100, category: 'Groceries' },
-//     { amount: 200, category: 'Utilities' },
-//     { amount: 50, category: 'Transportation' },
-//     { amount: 75, category: 'Groceries' }
-// ];
+const monthlyExpenses = [
+    { amount: 100, category: 'Groceries' },
+    { amount: 200, category: 'Utilities' },
+    { amount: 50, category: 'Transportation' },
+    { amount: 75, category: 'Groceries' }
+];
 
-// const totalAmount = calculateTotalExpenses(monthlyExpenses);
-// console.log(`Total amount of all expenses: Rs. ${totalAmount}`);
+const totalAmount = calculateTotalExpenses(monthlyExpenses);
+console.log(`Total amount of all expenses: Rs. ${totalAmount}`);
 // output: Total amount of all expenses: Rs. 425
 
 
@@ -168,20 +168,20 @@ called categorizedExpenses, where each element represents the category for the c
 the original list. Finally, print out the categorizedExpenses array.
 */
 
-// function categorizeExpense(amount) {
-//     return amount > 100 ? "High Expense" : "Low Expense";
-// }
-// let expenses = [
-//     { amount: 100, category: 'Utilities' },
-//     { amount: 200, category: 'Groceries' },
-//     { amount: 50, category: 'Entertainment' }
-// ];
+function categorizeExpense(amount) {
+    return amount > 100 ? "High Expense" : "Low Expense";
+}
+let expenses = [
+    { amount: 100, category: 'Utilities' },
+    { amount: 200, category: 'Groceries' },
+    { amount: 50, category: 'Entertainment' }
+];
 
-// const categorizedExpenses = expenses.map(expense => categorizeExpense(expense.amount));
+const categorizedExpenses = expenses.map(expense => categorizeExpense(expense.amount));
 
-// const filteredCategorizedExpenses = categorizedExpenses.filter((_, index) => index !== 3);
+const filteredCategorizedExpenses = categorizedExpenses.filter((_, index) => index !== 3);
 
-// console.log(`Categorized Expenses: ${JSON.stringify(filteredCategorizedExpenses)}`);
+console.log(`Categorized Expenses: ${JSON.stringify(filteredCategorizedExpenses)}`);
 // // output: Categorized Expenses: ["Low Expense","High Expense","Low Expense"]
 
 
@@ -200,13 +200,13 @@ the forEach method to iterate through each element in the array. During the iter
 each number. After completing the iteration, display the modified array.
 */
 
-// let originalNumbers = [2, 5, 8, 10, 3];
+let originalNumbers = [2, 5, 8, 10, 3];
 
-// originalNumbers.forEach((number, index, arr) => {
-//     arr[index] = number * 2; // Double the value and update the array
-// });
+originalNumbers.forEach((number, index, arr) => {
+    arr[index] = number * 2; // Double the value and update the array
+});
 
-// console.log(originalNumbers);
+console.log(originalNumbers);
 // output: [ 4, 10, 16, 20, 6 ]
 
 
